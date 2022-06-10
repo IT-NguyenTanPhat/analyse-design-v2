@@ -1,0 +1,17 @@
+.sb-nav {
+    color: #fff;
+    box-shadow: 10px 0 5px -5px #333;
+}
+
+.sb-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 12px 24px;
+}
+
+.sb-item a {
+    color: #fff;
+}
+
+.sb-item:hover a {
+    color: #ccc;
+}
