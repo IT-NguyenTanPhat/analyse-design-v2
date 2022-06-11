@@ -9,14 +9,12 @@ import { useEffect } from "react";
 export default function EditOrder() {
     const param = useParams();
     const navigate = useNavigate();
-    // Get student to pass to form
     const { sendRequest, status, data, error } = useHttp(getOrder, true);
 
     useEffect(() => {
         sendRequest(param.id);
     }, [sendRequest, param.id]);
 
-    // Update student
     const { sendRequest: request, status: stt } = useHttp(updateOrder);
 
     useEffect(() => {
@@ -25,7 +23,6 @@ export default function EditOrder() {
         }
     }, [stt, navigate]);
 
-    // Check data after get
     if (status === "pending") return <Loader />;
     if (error) return <h1>{error}</h1>;
     if (!data) return <NoItem />;

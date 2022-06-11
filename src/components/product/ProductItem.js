@@ -39,7 +39,7 @@ export default function ProductItem({ product }) {
                     <FiTrash
                         onClick={toggle}
                         size={22}
-                        style={{ color: "red", marginLeft: "10px" }}
+                        style={{ color: "red", marginLeft: "10px", cursor: "pointer" }}
                     />
                 </td>
             </tr>

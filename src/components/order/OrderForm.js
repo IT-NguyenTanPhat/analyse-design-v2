@@ -7,7 +7,7 @@ export default function OrderForm(props) {
         id: props.order.id,
         name: props.order.name,
         phone: props.order.phone,
-        total: props.order.total,
+        address: props.order.address,
         date: props.order.date,
         status: props.order.status,
     });
@@ -21,7 +21,7 @@ export default function OrderForm(props) {
 
         const nameInput = document.getElementById("name").value;
         const phoneInput = document.getElementById("phone").value;
-        const totalInput = parseInt(document.getElementById("total").value);
+        const addressInput = document.getElementById("address").value;
         const dateInput = document.getElementById("date").value;
         const statusInput = document.getElementById("status").value;
 
@@ -29,7 +29,7 @@ export default function OrderForm(props) {
             id: state.id,
             name: nameInput,
             phone: phoneInput,
-            total: totalInput,
+            address: addressInput,
             date: dateInput,
             status: statusInput,
         };
@@ -38,6 +38,7 @@ export default function OrderForm(props) {
             order.name === "" ||
             order.phone === "" ||
             order.date === "" ||
+            order.address === "" ||
             order.status === ""
         ) {
             alert("Please enter your information");
@@ -74,14 +75,12 @@ export default function OrderForm(props) {
                     />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="total">Total</Label>
+                    <Label for="address">Address</Label>
                     <Input
-                        id="total"
-                        name="total"
-                        placeholder="Total"
-                        type="number"
-                        min="0"
-                        value={state.total}
+                        id="address"
+                        name="address"
+                        placeholder="Address"
+                        value={state.address}
                         onChange={(e) => handleChange(e)}
                     />
                 </FormGroup>
